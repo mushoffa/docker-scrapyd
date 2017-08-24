@@ -56,8 +56,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install python package requirements
-COPY ./requirements.txt /usr/src/app
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 COPY ./scrapyd.conf /etc/scrapyd/
 VOLUME /etc/scrapyd/ /var/lib/scrapyd/
