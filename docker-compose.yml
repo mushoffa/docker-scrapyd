@@ -1,0 +1,9 @@
+version:  '3'
+services:
+  image: mushoffa/scrapyd
+  ports:
+    - "6800:6800"
+  volumes:
+    - ./data:/var/lib/scrapyd
+    - /usr/local/lib/python3.5/dist-packages
+  restart: always
